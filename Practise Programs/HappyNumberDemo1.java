@@ -1,4 +1,3 @@
-
 import java.util.Arrays;
 
 public class HappyNumberDemo1 {
@@ -21,10 +20,8 @@ public class HappyNumberDemo1 {
     }
 
     public static void happyNumber(int n) {
-        int temp = countDigit(n);
-
         int[] arr = new int[100];
-        arr[0] = temp;
+        arr[0] = countDigit(n);
         for (int i = 1; i < arr.length; i++) {
             if (arr[i - 1] == 1) {
                 break;

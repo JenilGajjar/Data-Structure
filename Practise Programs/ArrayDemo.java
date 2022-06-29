@@ -20,7 +20,7 @@ public class ArrayDemo {
                 count = 0;
             }
         }
-        if (count == 0 || count == 1) {
+        if (count <2) {
             return 0;
         }
         return 1;

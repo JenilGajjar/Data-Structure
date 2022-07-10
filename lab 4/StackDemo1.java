@@ -5,12 +5,11 @@ import java.util.Scanner;
 
 public class StackDemo1 {
 
-    int n;
-    int[] arr = new int[10];
+    int[] arr;
     int top = -1;
 
     public void setSize(int i) {
-        n = i;
+        arr = new int[i];
     }
 
     public void push(int x) {
@@ -64,7 +63,6 @@ public class StackDemo1 {
         int a = sc.nextInt();
         StackDemo1 stack = new StackDemo1();
         stack.setSize(a);
-        System.out.println(stack.arr.length);
         while (true) {
             System.out.println("Enter your choice ");
             System.out.println("Press 1 for push");

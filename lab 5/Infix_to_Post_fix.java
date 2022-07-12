@@ -77,7 +77,7 @@ public class Infix_to_Post_fix {
             System.out.println("Invalid");
         else
             System.out.println("valid");
-        System.out.println("polish string " + polish);
+        System.out.println("postfix  " + polish);
         sc.close();
     }
 }

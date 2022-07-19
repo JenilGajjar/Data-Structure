@@ -21,12 +21,7 @@ public class CircularQueue {
             if (front == -1) {
                 front = 0;
             }
-            // System.out.println("length :" + arr.length);
-            // System.out.println("temp :" + temp);
             rear = temp;
-            // System.out.println("rear :" + rear);
-            // System.out.println("front :" + front);
-
             arr[rear] = n;
         }
     }

@@ -75,7 +75,7 @@ public class CustomLinkedList {
 
     public int removeLast() {
         if (head == null) {
-            System.out.println("Stack is Empty \nCannot Remove an item from an empty list");
+            System.out.println("List is Empty \nCannot Remove an item from an empty list");
             return -1;
         }
         Node currentnode = head, prev = null;

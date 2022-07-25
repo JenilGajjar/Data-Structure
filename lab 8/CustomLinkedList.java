@@ -41,6 +41,27 @@ public class CustomLinkedList {
         }
     }
 
+    public void insertByIndex(int index, int a) {
+        if (index == 0) {
+            addFirst(a);
+            return;
+        }
+        int count = 0;
+        Node node = new Node(a);
+        Node currentNode = head, prev = null;
+        while (count != index && currentNode != null) {
+            prev = currentNode;
+            currentNode = currentNode.next;
+            count++;
+        }
+        if (currentNode == null) {
+            System.out.println("Index out of bounds ");
+            return;
+        }
+        prev.next = node;
+        node.next = currentNode;
+    }
+
     public int removeFirst() {
         if (head == null) {
             System.out.println("List is Empty \nCannot Remove an item from an empty list");
@@ -132,7 +153,7 @@ public class CustomLinkedList {
     public static void main(String[] args) {
         CustomLinkedList list = new CustomLinkedList();
         Scanner sc = new Scanner(System.in);
-        String str = "Press 1 to insert a node at the front of the linked list.\nPress 2 to display all nodes.\nPress 3 to delete a first node of the linked list.\nPress 4 to insert a node at the end of the linked list.\nPress 5 to delete a last node of the linked list.\nPress 6 to delete a node from specified position. \nPress 7 to delete a node by its value\nPress 8 to exit";
+        String str = "Press 1 to insert a node at the front of the linked list.\nPress 2 to display all nodes.\nPress 3 to delete a first node of the linked list.\nPress 4 to insert a node at the end of the linked list.\nPress 5 to delete a last node of the linked list.\nPress 6 to delete a node from specified position. \nPress 7 to delete a node by its value\nPress 8 to insert an element by index\nPress 9 to exit";
         System.out.println(str);
         int choice = sc.nextInt();
         while (true) {
@@ -166,6 +187,13 @@ public class CustomLinkedList {
             } else if (choice == 7) {
                 System.out.println("Enter the value of the node that you want to delete");
                 list.deleteByData(sc.nextInt());
+                System.out.println(str);
+                choice = sc.nextInt();
+            } else if (choice == 8) {
+                System.out.println("Enter index");
+                int i = sc.nextInt();
+                System.out.println("Enter element");
+                list.insertByIndex(i, sc.nextInt());
                 System.out.println(str);
                 choice = sc.nextInt();
             } else {

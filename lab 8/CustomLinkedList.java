@@ -32,13 +32,14 @@ public class CustomLinkedList {
         Node node = new Node(a);
         if (head == null) {
             head = node;
-        } else {
-            Node currentNode = head;
-            while (currentNode.next != null) {
-                currentNode = currentNode.next;
-            }
-            currentNode.next = node;
+            return;
         }
+        Node currentNode = head;
+        while (currentNode.next != null) {
+            currentNode = currentNode.next;
+        }
+        currentNode.next = node;
+
     }
 
     public void insertByIndex(int index, int a) {
@@ -74,7 +75,7 @@ public class CustomLinkedList {
 
     public int removeLast() {
         if (head == null) {
-            System.out.println("List is Empty \nCannot Remove an item from an empty list");
+            System.out.println("Stack is Empty \nCannot Remove an item from an empty list");
             return -1;
         }
         Node currentnode = head, prev = null;
@@ -86,7 +87,7 @@ public class CustomLinkedList {
         }
         if (currentnode == head) {
             head = null;
-            return -1;
+            return currentnode.data;
         }
         prev.next = null;
         return element;
@@ -118,9 +119,7 @@ public class CustomLinkedList {
             System.out.println("List is Empty \nCannot Remove an item from an empty list");
             return -1;
         } else if (i == 0) {
-            element = head.data;
-            head = head.next;
-            return element;
+            return removeFirst();
         }
         while (currentNode.next != null && count != i) {
             prev = currentNode;

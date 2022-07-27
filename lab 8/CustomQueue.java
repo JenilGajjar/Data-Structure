@@ -1,3 +1,5 @@
+// Write a program to implement queue using singly linked list.
+
 import java.util.Scanner;
 
 public class CustomQueue extends CustomLinkedList {

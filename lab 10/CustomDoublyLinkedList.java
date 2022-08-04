@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 /*
 	Write a menu driven program to implement following operations on the doubly linked list.
 	a. Insert a node at the front of the linked list.
@@ -7,6 +5,8 @@ import java.util.Scanner;
 	c. Insert a node at the end of the linked list. (Home Work)
 	d. Display all nodes. (Home Work)
 */
+import java.util.Scanner;
+
 public class CustomDoublyLinkedList {
 	Node head;
 	Node tail;
@@ -262,9 +262,7 @@ public class CustomDoublyLinkedList {
 					break;
 
 				default:
-					System.out.println("Invalid choice");
-					System.out.println(str);
-					choice = sc.nextInt();
+					choice = 10;
 					break;
 			}
 		}
